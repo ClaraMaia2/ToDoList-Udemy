@@ -1,9 +1,18 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-function TodoListItem({ todo, onPressTodo }) {
+/**
+ * Renders a single todo item in a list.
+ * 
+ * @param {object} props - The props object containing todo, onPressTodo, and onLongPressTodo.
+ * @param {object} props.todo - The todo object containing text and done properties.
+ * @param {function} props.onPressTodo - The function to be called when the todo item is pressed.
+ * @param {function} props.onLongPressTodo - The function to be called when the todo item is long pressed.
+ * @returns {JSX.Element} A TouchableOpacity component with a View and Text component inside.
+ */
+function TodoListItem({ todo, onPressTodo, onLongPressTodo }) {
     return (
-        <TouchableOpacity onPress={ onPressTodo }>
+        <TouchableOpacity onPress={ onPressTodo } onLongPress={ onLongPressTodo }>
             <View style={ styles.line }>
                 <Text style={ [ styles.lineText, todo.done ? styles.lineThrough : null ] }>{ todo.text }</Text>
             </View>

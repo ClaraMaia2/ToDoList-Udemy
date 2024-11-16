@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { StyleSheet, TextInput } from "react-native";
 
 const Input = ({ onChangeText, value }) => (
     <TextInput onChangeText={ onChangeText } value={ value } style={ styles.input } underlineColorAndroid={ "pink" } />
